@@ -465,7 +465,6 @@ int load_tracker_data(BudgetTracker *tracker, const char *filename) {
 
     tracker->income_count = 0;
     if (fscanf(fp, "%31s %d", label, &count) == 2) {
-        clear_line_in_file: ;
         int ch;
         while ((ch = fgetc(fp)) != '\n' && ch != EOF) {}
         for (int i = 0; i < count && i < MAX_INCOME; i++) {
